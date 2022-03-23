@@ -1,5 +1,5 @@
 <paml>
-	<meta listStyle = numbers listRotation = alternating startComment = "//TODO Write your solution here" />
+	<meta lang=Java listStyle = numbers listRotation = alternating startComment = "//TODO Write your solution here" />
 	
 	<code> 
 	public class Greeter {
