@@ -1,0 +1,37 @@
+grammar org.xtext.example.paml.PAML with org.eclipse.xtext.common.Terminals
+
+generate pAML "http://www.xtext.org/example/paml/PAML"
+
+
+PAML:
+	'<paml>'
+	(metaInformation=Meta)
+	(precode=CODE)? 
+	(tasks=Task)+ 
+	(postcode=CODE)?
+	'</paml>';
+
+Meta:
+	'<meta' 
+	('lang' '=' name=ID)?
+	('listStyle' '=' listStyle=ListStyle)
+	('listRotation' '=' listRotation=ListRotation)
+	('startComment' '=' string=STRING)
+	'/>';	
+
+enum ListStyle: NUMBERS='numbers' | LETTERS='letters' | ROMAN='roman';
+
+enum ListRotation: ALTERNATING='alternating' | SAME='same';
+
+terminal CODE:
+	'<code>' -> '</code>';
+
+Task:
+	'<task' ('title' '=' string=STRING)? ('description' '=' string=STRING) '>'
+	(code=CODE)?
+	(test=TEST)?
+	(subtasks=Task)*
+	'</task>';
+	
+terminal TEST:
+	'<test>' -> '</test>';

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pAML" nsURI="http://www.xtext.org/example/paml/PAML" nsPrefix="pAML">
+  <eClassifiers xsi:type="ecore:EClass" name="PAML">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaInformation" eType="#//Meta"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" eType="#//Task"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postcode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Meta">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listStyle" eType="#//ListStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listRotation" eType="#//ListRotation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ListStyle">
+    <eLiterals name="NUMBERS" literal="numbers"/>
+    <eLiterals name="LETTERS" value="1" literal="letters"/>
+    <eLiterals name="ROMAN" value="2" literal="roman"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ListRotation">
+    <eLiterals name="ALTERNATING" literal="alternating"/>
+    <eLiterals name="SAME" value="1" literal="same"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="test" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtasks" eType="#//Task"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

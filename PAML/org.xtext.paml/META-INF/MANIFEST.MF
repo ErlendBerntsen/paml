@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.paml
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.paml
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.paml; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.example.paml.pAML,
+ org.xtext.example.paml.serializer,
+ org.xtext.example.paml.services,
+ org.xtext.example.paml.validation,
+ org.xtext.example.paml.pAML.impl,
+ org.xtext.example.paml,
+ org.xtext.example.paml.pAML.util,
+ org.xtext.example.paml.parser.antlr.internal,
+ org.xtext.example.paml.scoping,
+ org.xtext.example.paml.parser.antlr,
+ org.xtext.example.paml.generator
+Import-Package: org.apache.log4j
